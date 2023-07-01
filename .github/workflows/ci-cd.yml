@@ -24,8 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-#      - name: Run tests
-#        run: npm run test
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      #      - name: Run tests
+      #        run: npm run test
 
       - name: Deploy to Vercel
         run: |
@@ -35,7 +38,10 @@ jobs:
           else
             git fetch --all
             git checkout main
-            git merge --no-ff ${{ github.head_ref }}
+            git config user.name "$(git --no-pager show -s --format='%an' ${{ github.event.pull_request.head.sha }})"
+            git config user.email "$(git --no-pager show -s --format='%ae' ${{ github.event.pull_request.head.sha }})"
+            git commit --amend --no-edit
+            git merge --no-ff origin/dev
             git push origin main
             npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
           fi
