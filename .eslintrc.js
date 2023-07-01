@@ -212,6 +212,7 @@ module.exports = {
     'no-param-reassign': 'off',
     // 'no-param-reassign': ['error', { props: true }],
     'react/jsx-key': 'error',
+    'react/display-name': 'off',
     'no-return-assign': ['error', 'always'],
     'import/no-cycle': 'off',
     'better-styled-components/sort-declarations-alphabetically': 2
