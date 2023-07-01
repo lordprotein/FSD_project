@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "sourceMap": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -14,12 +17,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "jsx": "react-jsx",
     "baseUrl": "./src",
   },
   "include": [
-    "src", "typings"
+    "src", "typings", "src/**/*.ts", "src/**/*.tsx"
   ],
   "exclude": ["node_modules"],
-  "types": ["typePatches"]
 }

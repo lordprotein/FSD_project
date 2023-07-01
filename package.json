@@ -12,7 +12,7 @@
     "redux-injectors": "^2.1.0",
     "redux-saga": "^1.2.3",
     "styled-components": "^6.0.1",
-    "typescript": "^4.4.2",
+    "typescript": "^4.9.5",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -46,7 +46,6 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-redux": "^7.1.25",
-    "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
@@ -65,9 +64,9 @@
     "lint-staged": "^13.2.3",
     "prettier": "^2.8.8"
   },
-  "lint-staged": {
-    "*.ts": "npx tsc --noEmit",
-    "*.{js,jsx,ts,tsx}": "npx eslint",
-    "*.{js,jsx,ts,tsx,html,css}": "npx prettier --check"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
