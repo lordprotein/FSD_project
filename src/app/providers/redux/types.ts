@@ -19,7 +19,6 @@ export const createSlice = <
   options: CreateSliceOptions<State, CaseReducers, Name>
 ) => createSliceOriginal(options)
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface RootState {
   loginContainer?: ILoginContainerState
   signUpContainer?: ISignUpContainerState
