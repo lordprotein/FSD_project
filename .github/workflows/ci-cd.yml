@@ -33,6 +33,7 @@ jobs:
             echo "Tests failed or encountered errors. Changes will not be merged to main."
             exit 1
           else
+            git fetch --all
             git checkout main
             git merge --no-ff ${{ github.head_ref }}
             git push origin main
