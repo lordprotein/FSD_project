@@ -4,6 +4,8 @@ import {
   createSlice as createSliceOriginal
 } from '@reduxjs/toolkit'
 
+import { ILoginContainerState } from 'entities/login'
+
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 
 type RootStateKeyType = keyof RootState
@@ -17,4 +19,6 @@ export const createSlice = <
 ) => createSliceOriginal(options)
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface RootState {}
+export interface RootState {
+  loginContainer?: ILoginContainerState
+}
