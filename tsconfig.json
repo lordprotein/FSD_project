@@ -17,10 +17,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "baseUrl": "./src",
+    "baseUrl": "src",
   },
-  "include": [
-    "src", "typings", "src/**/*.ts", "src/**/*.tsx"
-  ],
   "exclude": ["node_modules"],
+  "types": ["typePatches"]
 }
