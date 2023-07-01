@@ -5,6 +5,7 @@ import {
 } from '@reduxjs/toolkit'
 
 import { ILoginContainerState } from 'entities/login'
+import { ISignUpContainerState } from 'entities/sign-up'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 
@@ -21,4 +22,5 @@ export const createSlice = <
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface RootState {
   loginContainer?: ILoginContainerState
+  signUpContainer?: ISignUpContainerState
 }
