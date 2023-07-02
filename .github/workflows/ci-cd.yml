@@ -29,8 +29,8 @@ jobs:
 
       - name: Set git user
         run: |
-          git config --global user.email "gamee.logi@gmail.com"
-          git config --global user.name "lordprotein"
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
 
       - name: Merge origin/dev into main
         run: |
@@ -48,3 +48,6 @@ jobs:
 
       - name: Push changes to main
         run: git push origin main
+
+      - name: Run deployment
+        uses: deploy.yml
