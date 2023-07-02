@@ -50,4 +50,5 @@ jobs:
         run: git push origin main
 
       - name: Run deployment
-        uses: ./deploy.yml
+        run: |
+          ./.github/workflows/deploy.yml
