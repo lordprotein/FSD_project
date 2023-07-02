@@ -37,8 +37,8 @@ jobs:
             git fetch origin dev
             git checkout main
             git merge --no-ff origin/dev
-            git config user.name "$(git --no-pager show -s --format='%an' ${{ github.event.pull_request.head.sha }})"
-            git config user.email "$(git --no-pager show -s --format='%ae' ${{ github.event.pull_request.head.sha }})"
+            git config --global user.name "$(git --no-pager show -s --format='%an' ${{ github.event.pull_request.head.sha }})"
+            git config --global user.email "$(git --no-pager show -s --format='%ae' ${{ github.event.pull_request.head.sha }})"
             git commit --amend --no-edit
             git push origin main
           fi
