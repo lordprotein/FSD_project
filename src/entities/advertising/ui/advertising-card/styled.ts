@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const CardDefaultStyled = styled.div`
   background-color: ${(props) => props.theme.colors.purple[70]};
-  border-radius: 4px;
+  border-radius: 6px;
   color: ${(props) => props.theme.colors.primary[0]};
   padding: 5px;
   width: fit-content;
