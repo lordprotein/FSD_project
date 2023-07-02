@@ -51,4 +51,4 @@ jobs:
 
       - name: Run deployment
         run: |
-          bash ./deploy.yml
+          ./.github/workflows/deploy.yml
