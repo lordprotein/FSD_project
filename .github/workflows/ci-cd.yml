@@ -50,4 +50,4 @@ jobs:
         run: git push origin main
 
       - name: Run deployment
-        uses: bash ./deploy.yml
+        uses: ./deploy.yml
