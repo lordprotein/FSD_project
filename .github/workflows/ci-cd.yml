@@ -27,14 +27,17 @@ jobs:
       # - name: Run tests
       #   run: npm run test
 
+      - name: Set git user
+        run: |
+          git config --global user.email "gamee.logi@gmail.com"
+          git config --global user.name "lordprotein"
+
       - name: Merge origin/dev into main
         run: |
           if [[ ${{ job.status }} != 'success' ]]; then
             echo "Tests failed or encountered errors. Changes will not be merged to main."
             exit 1
           else
-            git config --global user.email "gamee.logi@gmail.com"
-            git config --global user.name "lordprotein"
             git fetch --all
             git fetch origin dev
             git checkout main
