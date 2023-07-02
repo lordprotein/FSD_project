@@ -51,4 +51,5 @@ jobs:
 
       - name: Run deployment
         run: |
+          chmod +x ./.github/workflows/deploy.yml
           ./.github/workflows/deploy.yml
