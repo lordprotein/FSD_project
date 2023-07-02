@@ -1,4 +1,4 @@
-name: CI/CD
+name: Merge to main
 
 on:
   push:
@@ -24,23 +24,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Vercel CLI
-        run: npm install -g vercel
+      # - name: Run tests
+      #   run: npm run test
 
-      #      - name: Run tests
-      #        run: npm run test
-
-      - name: Deploy to Vercel
+      - name: Merge origin/dev into main
         run: |
           if [[ ${{ job.status }} != 'success' ]]; then
             echo "Tests failed or encountered errors. Changes will not be merged to main."
             exit 1
           else
             git fetch --all
+            git fetch origin dev
             git checkout main
-            git config user.name "$(git --no-pager show -s --format='%an' ${{ github.event.pull_request.head.sha }})"
-            git config user.email "$(git --no-pager show -s --format='%ae' ${{ github.event.pull_request.head.sha }})"
-            git commit --amend --no-edit
             git merge --no-ff origin/dev
             git push origin main
           fi
+
+      - name: Push changes to main
+        run: git push origin main
