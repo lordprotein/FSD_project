@@ -48,8 +48,3 @@ jobs:
 
       - name: Push changes to main
         run: git push origin main
-
-      - name: Run deployment
-        run: |
-          chmod +x ./.github/workflows/deploy.yml
-          ./.github/workflows/deploy.yml
